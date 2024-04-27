@@ -127,11 +127,18 @@ if __name__ == "__main__":
         removed_stocks = set(current_month) - set(next_month)
         added_stocks = set(next_month) - set(current_month)
 
+        changes_txt = "# Planned transactions for next month\n\n"
+        changes_txt = changes_txt + "## New\n"
         for stock in added_stocks:
-            print(f"+ {stock}")
+            changes_txt = changes_txt + f"+ {stock}\n"
 
+        changes_txt = changes_txt + "## Unchanged\n"
         for stock in unchanged_stocks:
-            print(f"* {stock}")
+            changes_txt = changes_txt + f"* {stock}\n"
 
-        for stock in added_stocks:
-            print(f"- {stock}")
+        changes_txt = changes_txt + "## Leave\n"
+        for stock in removed_stocks:
+            changes_txt = changes_txt + f"- {stock}\n"
+
+        with open("Changes.md", "w") as text_file:
+            text_file.write(changes_txt)

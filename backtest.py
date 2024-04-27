@@ -1,4 +1,5 @@
 import operator
+from datetime import timedelta
 from typing import Dict, List
 
 import pandas as pd
@@ -115,14 +116,73 @@ def get_top_stocks(stocks: dict) -> dict:
 if __name__ == "__main__":
     sp_500 = get_monthly_index()
     ndx_stocks = prepare_stocks(index=sp_500)
-    ndx_stocks = ndx_stocks["2024-01-01":]
+    ndx_stocks = ndx_stocks["2022-12-01":]
 
+    portfolio = []
     for month in range(len(ndx_stocks)):
         if ndx_stocks.iloc[month].Close > ndx_stocks.iloc[month].sma:
-            print(
-                f"{ndx_stocks.iloc[month].name.month+1:0>2} / {ndx_stocks.iloc[month].name.year}"
-            )
             top_stocks = get_top_stocks(ndx_stocks.iloc[month].to_dict())
 
             for ticker in [ticker for (ticker, _) in top_stocks]:
-                print(f"- {ticker}")
+                portfolio.append(
+                    {
+                        "month": f"{(ndx_stocks.iloc[month].name+timedelta(days=10)).year}-{(ndx_stocks.iloc[month].name+timedelta(days=10)).month:0>2}",
+                        "symbol": ticker,
+                    }
+                )
+    portfolio = pd.DataFrame(portfolio)
+
+    stocks = get_stocks(list(portfolio.symbol.unique()))
+    for pos, position in portfolio.iterrows():
+        df = stocks[position.symbol]
+        df["Date"] = df.index
+        df["month"] = df["Date"].dt.strftime("%Y-%m")
+
+        df_month = df.groupby("month").agg(
+            End=("Date", "last"),
+            Start=("Date", "first"),
+            Open=("Open", "first"),
+            Close=("Close", "last"),
+        )
+        try:
+            portfolio.loc[pos, "start"] = df_month.loc[position.month].Start
+            portfolio.loc[pos, "end"] = df_month.loc[position.month].End
+            portfolio.loc[pos, "buy"] = df_month.loc[position.month].Open
+            portfolio.loc[pos, "sell"] = df_month.loc[position.month].Close
+            portfolio.loc[pos, "profit"] = (
+                (
+                    (
+                        df_month.loc[position.month].Close
+                        / df_month.loc[position.month].Open
+                    )
+                    - 1
+                )
+                * 100
+            ).round(1)
+        except:
+            pass
+
+    trade_journal = portfolio.set_index("month").to_markdown()
+
+    monthly = (
+        portfolio.groupby("month")
+        .agg(
+            Positions=("symbol", "count"),
+            Profit=("profit", "sum"),
+        )
+        .dropna()
+    )
+
+    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a monthly return of {monthly.Profit.mean():.2f} %. Every month!\n\n"
+    readme_txt = (
+        readme_txt
+        + f'## Monthly Return\n{portfolio.groupby(portfolio.month.str[-2:]).agg(profit=("profit", "sum")).to_markdown()}\n\n'
+    )
+    readme_txt = (
+        readme_txt
+        + f'## Tradehistory\n{portfolio.set_index("month").to_markdown()}\n\n'
+    )
+    # print(monthly)
+
+    with open("README.md", "w") as text_file:
+        text_file.write(readme_txt)

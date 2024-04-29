@@ -173,14 +173,15 @@ if __name__ == "__main__":
         .dropna()
     )
 
-    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a monthly return of {monthly.Profit.mean():.2f} %. Every month!\n\n"
+    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a average monthly return of {monthly.Profit.mean():.2f} %. Every month!\n\n"
     readme_txt = (
         readme_txt
         + f'## Monthly Return\n{portfolio.groupby(portfolio.month.str[-2:]).agg(profit=("profit", "sum")).to_markdown()}\n\n'
     )
+
     readme_txt = (
         readme_txt
-        + f'## Tradehistory\n{portfolio.set_index("month").to_markdown()}\n\n'
+        + f'## Tradehistory\n{portfolio.set_index("month").astype(str).to_markdown(floatfmt=".2f")}\n\n'
     )
     # print(monthly)
 

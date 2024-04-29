@@ -1,4 +1,4 @@
-name: weekly report
+name: Depot transactions
 
 on:
   schedule:

@@ -1,4 +1,4 @@
-name: depot report
+name: upcoming transactions
 
 on:
   schedule:

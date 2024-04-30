@@ -28,14 +28,14 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python backtest.py
+        run: python screener.py
 
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add *
-          git diff-index --quiet HEAD || (git commit -a -m "add weekly report" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "update transactions" --allow-empty)
 
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0

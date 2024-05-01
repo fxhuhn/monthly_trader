@@ -1,19 +1,19 @@
 # Planned transactions for next month
 
 ## New
-+ amat
-+ fang
-+ qcom
 + klac
++ qcom
++ fang
++ amat
 ## Unchanged
-* avgo
-* mu
-* ceg
 * nvda
-* dash
+* mu
 * crwd
+* ceg
+* dash
+* avgo
 ## Leave
+- pcar
+- amd
 - meta
 - lrcx
-- amd
-- pcar

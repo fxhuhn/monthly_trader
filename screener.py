@@ -3,7 +3,6 @@ from typing import Dict, List
 
 import numpy as np
 import pandas as pd
-import pandas_ta as ta
 import yfinance as yf
 
 from tools import atr, roc, sma
@@ -84,8 +83,7 @@ def get_score(data: pd.DataFrame) -> pd.Series:
         data[f"roc_{intervall}"] = (roc(data.Close, 20)).shift(intervall)
 
     data["score"] = np.where(
-        (ta.adx(data.High, data.Low, data.Close, 10)["ADX_10"] > 25)
-        & (atr(data, 60) > atr(data, 20)),
+        (data.Close > sma(data.Close, 100)) & (atr(data, 60) > atr(data, 20)),
         data[[f"roc_{intervall}" for intervall in roc_intervall]].mean(axis=1),
         np.nan,
     )

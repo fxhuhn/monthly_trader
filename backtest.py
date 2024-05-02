@@ -80,7 +80,7 @@ def get_score(data: pd.DataFrame) -> pd.Series:
     roc_intervall = [intervall for intervall in range(20, 240, 20)]
 
     for intervall in roc_intervall:
-        data[f"roc_{intervall}"] = roc(data.Close, intervall)
+        data[f"roc_{intervall}"] = roc(data.Close, 20).shift(intervall)
 
     return data[[f"roc_{intervall}" for intervall in roc_intervall]].sum(axis=1)
 
@@ -116,12 +116,12 @@ def get_top_stocks(stocks: dict) -> dict:
 if __name__ == "__main__":
     sp_500 = get_monthly_index()
     ndx_stocks = prepare_stocks(index=sp_500)
-    ndx_stocks = ndx_stocks["2022-12-01":]
+    ndx_stocks = ndx_stocks["2020-12-01":]
 
     portfolio = []
     for month in range(len(ndx_stocks)):
         if ndx_stocks.iloc[month].Close > ndx_stocks.iloc[month].sma:
-            top_stocks = get_top_stocks(ndx_stocks.iloc[month].to_dict())
+            top_stocks = get_top_stocks(ndx_stocks.iloc[month].dropna().to_dict())
 
             for ticker in [ticker for (ticker, _) in top_stocks]:
                 portfolio.append(

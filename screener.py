@@ -79,7 +79,7 @@ def get_score(data: pd.DataFrame) -> pd.Series:
     roc_intervall = [intervall for intervall in range(20, 240, 20)]
 
     for intervall in roc_intervall:
-        data[f"roc_{intervall}"] = roc(data.Close, intervall)
+        data[f"roc_{intervall}"] = roc(data.Close, 20).shift(intervall)
 
     return data[[f"roc_{intervall}" for intervall in roc_intervall]].sum(axis=1)
 
@@ -117,7 +117,7 @@ if __name__ == "__main__":
     ndx_stocks = prepare_stocks(index=sp_500)
 
     if sp_500.iloc[-1].Close > sp_500.iloc[-1].sma:
-        top_stocks = get_top_stocks(ndx_stocks.iloc[-2].to_dict())
+        top_stocks = get_top_stocks(ndx_stocks.iloc[-2].dropna().to_dict())
         current_month = [ticker for (ticker, _) in top_stocks]
 
         top_stocks = get_top_stocks(ndx_stocks.iloc[-1].to_dict())

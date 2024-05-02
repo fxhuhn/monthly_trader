@@ -1,16 +1,17 @@
 # Planned transactions for next month
 
 ## New
-+ pdd
++ bkng
++ amgn
 ## Unchanged
-* dash
-* ceg
-* avgo
 * crwd
-* nflx
-* mu
+* meli
 * amd
-* meta
-* nvda
+* cdns
+* pdd
+* zs
+* snps
+* intu
 ## Leave
-- mrvl
+- wday
+- intc

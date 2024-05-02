@@ -2,10 +2,11 @@ import operator
 from datetime import timedelta
 from typing import Dict, List
 
+import numpy as np
 import pandas as pd
 import yfinance as yf
 
-from tools import roc, sma
+from tools import atr, roc, sma
 
 # def
 MAX_STOCKS = 10
@@ -77,12 +78,18 @@ def resample_stocks_to_month(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_score(data: pd.DataFrame) -> pd.Series:
-    roc_intervall = [intervall for intervall in range(20, 240, 20)]
+    roc_intervall = [intervall for intervall in range(20, 200, 20)]
 
     for intervall in roc_intervall:
-        data[f"roc_{intervall}"] = roc(data.Close, 20).shift(intervall)
+        data[f"roc_{intervall}"] = (roc(data.Close, 20)).shift(intervall)
 
-    return data[[f"roc_{intervall}" for intervall in roc_intervall]].sum(axis=1)
+    data["score"] = np.where(
+        atr(data, 60) > atr(data, 20),
+        data[[f"roc_{intervall}" for intervall in roc_intervall]].mean(axis=1),
+        0,
+    )
+
+    return data["score"]
 
 
 def ndx100_list():
@@ -120,7 +127,9 @@ if __name__ == "__main__":
 
     portfolio = []
     for month in range(len(ndx_stocks)):
-        if ndx_stocks.iloc[month].Close > ndx_stocks.iloc[month].sma:
+        if (ndx_stocks.iloc[month].Close > ndx_stocks.iloc[month].sma) and (
+            ndx_stocks.iloc[month].month != ndx_stocks.month.max()
+        ):
             top_stocks = get_top_stocks(ndx_stocks.iloc[month].dropna().to_dict())
 
             for ticker in [ticker for (ticker, _) in top_stocks]:
@@ -162,28 +171,31 @@ if __name__ == "__main__":
         except:
             pass
 
-    trade_journal = portfolio.set_index("month").to_markdown()
+    trade_journal = portfolio.set_index("month").astype(str).to_markdown(floatfmt=".2f")
+
+    portfolio["invest"] = (10_000 / portfolio["buy"]).astype(int) * portfolio["buy"]
+    portfolio["profit"] = (10_000 / portfolio["buy"]).astype(int) * portfolio["sell"]
 
     monthly = (
         portfolio.groupby("month")
         .agg(
             Positions=("symbol", "count"),
+            Invest=("invest", "sum"),
             Profit=("profit", "sum"),
         )
         .dropna()
     )
+    monthly["earning"] = (
+        (monthly.Profit - monthly.Invest) / monthly.Invest * 100
+    ).round(1)
 
-    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a average monthly return of {monthly.Profit.mean():.2f}%. Every month!\n\n"
+    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a average monthly return of {monthly.earning.mean():.2f}%. Every month!\n\n"
     readme_txt = (
         readme_txt
-        + f'## Average Monthly Return\n{portfolio.groupby(portfolio.month.str[-2:]).agg(profit=("profit", "sum")).to_markdown()}\n\n'
+        + f'## Average Monthly Return\n{monthly.groupby(monthly.index.str[-2:]).agg(profit=("earning", "mean")).to_markdown(floatfmt=".2f")}\n\n'
     )
 
-    readme_txt = (
-        readme_txt
-        + f'## Tradehistory\n{portfolio.set_index("month").astype(str).to_markdown(floatfmt=".2f")}\n\n'
-    )
-    # print(monthly)
+    readme_txt = readme_txt + f"## Tradehistory\n{trade_journal}\n\n"
 
     with open("README.md", "w") as text_file:
         text_file.write(readme_txt)

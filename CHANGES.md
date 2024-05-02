@@ -1,17 +1,24 @@
 # Planned transactions for next month
 
 ## New
-+ bkng
-+ amgn
++ googl
++ ceg
++ mrvl
++ isrg
++ ttwo
++ payx
++ snps
++ pcar
++ gild
 ## Unchanged
-* crwd
-* meli
-* amd
-* cdns
-* pdd
-* zs
-* snps
-* intu
+* nflx
 ## Leave
-- wday
-- intc
+- amat
+- cdw
+- fang
+- crwd
+- regn
+- meli
+- amd
+- qcom
+- dash

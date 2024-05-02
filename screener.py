@@ -85,7 +85,7 @@ def get_score(data: pd.DataFrame) -> pd.Series:
     data["score"] = np.where(
         atr(data, 60) > atr(data, 20),
         data[[f"roc_{intervall}" for intervall in roc_intervall]].mean(axis=1),
-        0,
+        np.nan,
     )
 
     return data["score"]

@@ -189,7 +189,7 @@ if __name__ == "__main__":
         (monthly.Profit - monthly.Invest) / monthly.Invest * 100
     ).round(1)
 
-    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With a average monthly return of {monthly.earning.mean():.2f}%. Every month!\n\n"
+    readme_txt = f"# NASDAQ 100 Trader\nStock Trading and Screening only end of month. With an average monthly return of {monthly.earning.mean():.2f}%. Every month!\n\n"
     readme_txt = (
         readme_txt
         + f'## Average Monthly Return\n{monthly.groupby(monthly.index.str[-2:]).agg(profit=("earning", "mean")).to_markdown(floatfmt=".2f")}\n\n'

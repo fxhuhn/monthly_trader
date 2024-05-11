@@ -1,24 +1,26 @@
 # Planned transactions for next month
 
 ## New
-+ sbux
-+ ceg
-+ exc
-+ nxpi
-+ dxcm
-+ rop
-+ lin
-+ ilmn
-+ rost
++ mdb
++ cmcsa
++ ctas
++ gild
++ tsla
++ asml
++ on
++ adi
++ wba
++ bkr
 ## Unchanged
-* nflx
+
 ## Leave
 - lrcx
-- amd
 - meta
-- dash
-- amat
 - nvda
-- fang
-- crwd
 - qcom
+- crwd
+- dash
+- fang
+- amat
+- nflx
+- amd

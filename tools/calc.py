@@ -43,7 +43,7 @@ def sma(close: pd.Series, period: int = 200) -> pd.Series:
 
 
 def roc(close: pd.Series, period: int = 10) -> pd.Series:
-    return round((close - close.shift(period)) / close.shift(period) * 100)
+    return round((close - close.shift(period)) / close.shift(period) * 100, 2)
 
 
 def ema(close: pd.Series, period: int = 200) -> pd.Series:

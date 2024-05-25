@@ -1,26 +1,23 @@
 # Planned transactions for next month
 
 ## New
-+ lulu
-+ panw
-+ pcar
-+ aep
-+ csx
-+ avgo
-+ ilmn
-+ gild
-+ exc
-+ fast
++ vrsk
++ adp
++ wday
++ aapl
++ ddog
++ ttwo
++ wba
++ nxpi
 ## Unchanged
-
+* fang
+* dash
 ## Leave
-- crwd
 - qcom
-- amd
-- lrcx
-- fang
-- mar
-- dash
+- crwd
 - meta
 - nvda
+- amd
 - amat
+- lrcx
+- mar

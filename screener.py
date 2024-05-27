@@ -115,6 +115,7 @@ def get_top_stocks(stocks: dict) -> dict:
     stocks.pop("month")
     stocks.pop("Close")
     stocks.pop("sma")
+    stocks = {k: v for k, v in stocks.items() if v > 0}
 
     return sorted(stocks.items(), key=operator.itemgetter(1))[-MAX_STOCKS:]
 

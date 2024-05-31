@@ -2,19 +2,19 @@
 
 ## New
 + mu
++ avgo
++ klac
 + ceg
 + pdd
-+ avgo
-+ panw
 ## Unchanged
+* crwd
 * amd
 * amat
-* crwd
 * meta
 * nvda
 ## Leave
-- lrcx
-- qcom
 - mar
 - fang
+- lrcx
 - dash
+- qcom

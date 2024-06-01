@@ -1,20 +1,20 @@
 # Planned transactions for next month
 
 ## New
-+ mu
-+ avgo
 + klac
-+ ceg
++ mu
 + pdd
++ avgo
++ ceg
 ## Unchanged
-* crwd
 * amd
-* amat
-* meta
 * nvda
+* meta
+* crwd
+* amat
 ## Leave
-- mar
 - fang
-- lrcx
 - dash
+- lrcx
 - qcom
+- mar

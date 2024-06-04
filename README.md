@@ -1,5 +1,5 @@
 # NASDAQ 100 Trader
-Stock Trading and Screening only end of month. With an average monthly return of 3.29%. Every month!
+Stock Trading and Screening only end of month. With an average monthly return of 3.17%. Every month!
 
 ## Average Monthly Return
 |   month |   profit |
@@ -9,7 +9,7 @@ Stock Trading and Screening only end of month. With an average monthly return of
 |      03 |    -1.87 |
 |      04 |    -3.72 |
 |      05 |     5.80 |
-|      06 |     8.17 |
+|      06 |     5.73 |
 |      07 |     7.50 |
 |      08 |     1.53 |
 |      09 |    -2.30 |
@@ -410,4 +410,14 @@ Stock Trading and Screening only end of month. With an average monthly return of
 | 2024-05 | dash     | 2024-05-01 | 2024-05-31 |  128.15 |  110.11 |   -14.10 |
 | 2024-05 | crwd     | 2024-05-01 | 2024-05-31 |  290.44 |  313.67 |     8.00 |
 | 2024-05 | nvda     | 2024-05-01 | 2024-05-31 |  850.77 | 1096.33 |    28.90 |
+| 2024-06 | klac     | 2024-06-03 | 2024-06-03 |  771.48 |  754.15 |    -2.20 |
+| 2024-06 | amat     | 2024-06-03 | 2024-06-03 |  218.33 |  214.21 |    -1.90 |
+| 2024-06 | avgo     | 2024-06-03 | 2024-06-03 | 1352.70 | 1321.90 |    -2.30 |
+| 2024-06 | meta     | 2024-06-03 | 2024-06-03 |  470.86 |  477.49 |     1.40 |
+| 2024-06 | amd      | 2024-06-03 | 2024-06-03 |  170.82 |  163.55 |    -4.30 |
+| 2024-06 | pdd      | 2024-06-03 | 2024-06-03 |  147.94 |  146.92 |    -0.70 |
+| 2024-06 | mu       | 2024-06-03 | 2024-06-03 |  128.13 |  128.17 |     0.00 |
+| 2024-06 | ceg      | 2024-06-03 | 2024-06-03 |  215.50 |  208.26 |    -3.40 |
+| 2024-06 | crwd     | 2024-06-03 | 2024-06-03 |  319.37 |  308.69 |    -3.30 |
+| 2024-06 | nvda     | 2024-06-03 | 2024-06-03 | 1136.21 | 1150.00 |     1.20 |
 

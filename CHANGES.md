@@ -1,19 +1,18 @@
 # Planned transactions for next month
 
 ## New
-+ ctas
-+ asml
-+ nflx
 + lrcx
++ klac
++ nflx
 ## Unchanged
-* avgo
+* pdd
 * meta
-* mu
+* arm
+* avgo
 * amat
 * nvda
-* klac
+* mu
 ## Leave
-- pdd
 - amd
-- ceg
 - crwd
+- ceg

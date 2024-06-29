@@ -2,17 +2,17 @@
 
 ## New
 + klac
-+ lrcx
 + nflx
++ lrcx
 ## Unchanged
-* nvda
-* pdd
-* amat
-* mu
-* avgo
-* arm
 * meta
+* amat
+* arm
+* pdd
+* mu
+* nvda
+* avgo
 ## Leave
-- crwd
-- amd
 - ceg
+- amd
+- crwd

@@ -1,22 +1,21 @@
 # Planned transactions for next month
 
 ## New
-+ isrg
 + cost
-+ amd
 + crwd
-+ ceg
-+ asml
 + mrna
++ amd
++ ceg
++ isrg
 ## Unchanged
 * meta
+* asml
 * pdd
 * nflx
 ## Leave
 - nvda
 - amat
-- klac
-- avgo
-- lrcx
-- arm
 - mu
+- klac
+- lrcx
+- avgo

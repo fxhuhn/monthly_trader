@@ -3,3 +3,4 @@ pandas
 tabulate
 yfinance
 pandas_ta
+git+https://github.com/jmccarrell/n100tickers@main

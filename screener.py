@@ -4,6 +4,7 @@ from typing import Dict, List
 import numpy as np
 import pandas as pd
 import yfinance as yf
+from nasdaq_100_ticker_history import tickers_as_of
 
 from tools import atr, roc, sma
 
@@ -29,6 +30,27 @@ def get_monthly_index():
         .sort_index()
     )
     return sp_500
+
+
+def get_nasdaq_symbols_monthly(year: int, month: int) -> List:
+    return list(tickers_as_of(year, month, 1))
+
+
+def get_nasdaq_symbols() -> List:
+    nasdaq_tickers = dict()
+    for year in range(2016, 2025, 1):
+        for month in range(1, 13, 1):
+            nasdaq_tickers[f"{year - 2000}-{month:02}"] = list(
+                tickers_as_of(year, month, 1)
+            )
+
+    all = []
+
+    for value in nasdaq_tickers.values():
+        all = all + value
+    nasdaq_tickers["all"] = list(set(all))
+
+    return nasdaq_tickers["all"]
 
 
 def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
@@ -98,7 +120,8 @@ def ndx100_list():
 
 def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
     tracker = index.copy()
-    stocks = get_stocks(ndx100_list())
+    # stocks = get_stocks(ndx100_list())
+    stocks = get_stocks(get_nasdaq_symbols())
 
     for symbol, df in stocks.items():
         df["score"] = get_score(df)
@@ -112,10 +135,15 @@ def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_top_stocks(stocks: dict) -> dict:
+    nasdaq_symbols = get_nasdaq_symbols_monthly(
+        2000 + int(stocks["month"][:2]), int(stocks["month"][-2:])
+    )
+    nasdaq_symbols = [symbol.lower() for symbol in nasdaq_symbols]
+
     stocks.pop("month")
     stocks.pop("Close")
     stocks.pop("sma")
-    stocks = {k: v for k, v in stocks.items() if v > 0}
+    stocks = {k: v for k, v in stocks.items() if v > 0 and k in nasdaq_symbols}
 
     return sorted(stocks.items(), key=operator.itemgetter(1))[-MAX_STOCKS:]
 

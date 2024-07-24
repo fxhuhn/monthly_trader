@@ -161,3 +161,4 @@ cython_debug/
 
 # Personal
 .DS_Store
+intern_*.*

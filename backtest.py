@@ -121,7 +121,7 @@ def ndx100_list():
 
 def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
     tracker = index.copy()
-    stocks = get_stocks(ndx100_list())
+    stocks = get_stocks(get_nasdaq_symbols())
 
     for symbol, df in stocks.items():
         df["score"] = get_score(df)

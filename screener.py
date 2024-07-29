@@ -99,13 +99,13 @@ def resample_stocks_to_month(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_score(data: pd.DataFrame) -> pd.Series:
-    roc_intervall = [intervall for intervall in range(20, 200, 20)]
+    roc_intervall = [intervall for intervall in range(20, 260, 20)]
 
     for intervall in roc_intervall:
         data[f"roc_{intervall}"] = (roc(data.Close, 20)).shift(intervall)
 
     data["score"] = np.where(
-        (data.Close > sma(data.Close, 100)) & (atr(data, 60) > atr(data, 20)),
+        (data.Close > sma(data.Close, 100)) & (atr(data, 100) > atr(data, 20)),
         data[[f"roc_{intervall}" for intervall in roc_intervall]].mean(axis=1),
         np.nan,
     )

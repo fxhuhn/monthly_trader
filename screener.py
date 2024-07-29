@@ -14,7 +14,7 @@ MAX_STOCKS = 10
 
 def get_monthly_index():
     sp_500 = yf.download("^GSPC")
-    sp_500["sma"] = sma(sp_500.Close, 275)
+    sp_500["sma"] = sma(sp_500.Close, 300)
     sp_500["Date"] = sp_500.index
     sp_500["month"] = sp_500["Date"].dt.strftime("%y-%m")
 

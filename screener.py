@@ -135,9 +135,16 @@ def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_top_stocks(stocks: dict) -> dict:
-    nasdaq_symbols = get_nasdaq_symbols_monthly(
-        2000 + int(stocks["month"][:2]), int(stocks["month"][-2:])
-    )
+    year = 2000 + int(stocks["month"][:2])
+    month = int(stocks["month"][-2:])
+
+    if month == 12:
+        year = year + 1
+        month = 1
+    else:
+        month = month + 1
+
+    nasdaq_symbols = get_nasdaq_symbols_monthly(year, month)
     nasdaq_symbols = [symbol.lower() for symbol in nasdaq_symbols]
 
     stocks.pop("month")

@@ -151,7 +151,10 @@ def get_top_stocks(stocks: dict) -> dict:
     stocks.pop("Close")
     stocks.pop("sma")
 
-    stocks.pop("googl")
+    try:
+        stocks.pop("googl")
+    except KeyError:
+        pass
 
     stocks = {k: v for k, v in stocks.items() if v > 0 and k in nasdaq_symbols}
 

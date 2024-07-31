@@ -1,22 +1,22 @@
 # Planned transactions for next month
 
 ## New
++ amd
++ crwd
++ goog
++ cost
 + asml
 + smci
 + fang
-+ amd
-+ goog
-+ crwd
-+ cost
 ## Unchanged
-* nflx
 * meta
 * pdd
+* nflx
 ## Leave
-- meli
-- amat
 - avgo
-- lrcx
 - mrvl
-- arm
+- meli
 - nxpi
+- lrcx
+- arm
+- amat

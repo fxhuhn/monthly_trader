@@ -1,5 +1,5 @@
 # NASDAQ 100 Trader
-Stock Trading and Screening only end of month. With an average monthly return of 2.39%. Every month!
+Stock Trading and Screening only end of month. With an average monthly return of 2.20%. Every month!
 
 ## Average Monthly Return
 |   month |   profit |
@@ -11,7 +11,7 @@ Stock Trading and Screening only end of month. With an average monthly return of
 |      05 |     0.87 |
 |      06 |     7.10 |
 |      07 |     4.80 |
-|      08 |     3.10 |
+|      08 |     0.95 |
 |      09 |    -4.13 |
 |      10 |     3.30 |
 |      11 |    13.00 |
@@ -430,4 +430,14 @@ Stock Trading and Screening only end of month. With an average monthly return of
 | 2024-07 | meta     | 2024-07-01 | 2024-07-31 |  504.95 |  474.83 |    -6.00 |
 | 2024-07 | pdd      | 2024-07-01 | 2024-07-31 |  133.55 |  128.89 |    -3.50 |
 | 2024-07 | arm      | 2024-07-01 | 2024-07-31 |  163.43 |  144.17 |   -11.80 |
+| 2024-08 | asml     | 2024-08-01 | 2024-08-02 |  923.04 |  809.35 |   -12.30 |
+| 2024-08 | amd      | 2024-08-01 | 2024-08-02 |  145.00 |  132.50 |    -8.60 |
+| 2024-08 | goog     | 2024-08-01 | 2024-08-02 |  171.98 |  168.40 |    -2.10 |
+| 2024-08 | fang     | 2024-08-01 | 2024-08-02 |  201.34 |  189.06 |    -6.10 |
+| 2024-08 | cost     | 2024-08-01 | 2024-08-02 |  818.55 |  822.08 |     0.40 |
+| 2024-08 | nflx     | 2024-08-01 | 2024-08-02 |  629.25 |  613.64 |    -2.50 |
+| 2024-08 | meta     | 2024-08-01 | 2024-08-02 |  521.00 |  488.14 |    -6.30 |
+| 2024-08 | pdd      | 2024-08-01 | 2024-08-02 |  127.86 |  127.41 |    -0.40 |
+| 2024-08 | crwd     | 2024-08-01 | 2024-08-02 |  232.00 |  217.89 |    -6.10 |
+| 2024-08 | smci     | 2024-08-01 | 2024-08-02 |  704.56 |  624.65 |   -11.30 |
 

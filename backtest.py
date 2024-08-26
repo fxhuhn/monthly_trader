@@ -128,8 +128,11 @@ def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
         df = resample_stocks_to_month(df)
         df[symbol] = df["score"]
 
+        helper = df[[symbol]]
+        helper.index = helper.index.date
+
         tracker = pd.merge(
-            tracker, df[[symbol]], left_index=True, right_index=True, how="left"
+            tracker, helper, left_index=True, right_index=True, how="left"
         )
     return tracker
 

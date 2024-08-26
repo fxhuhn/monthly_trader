@@ -77,7 +77,7 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
         df = stock_data[symbol]
         df = df[~(df.High == df.Low)]
         df = df.dropna()
-        df.index = pd.to_datetime(df.index)
+        df.index = pd.to_datetime(df.index).tz_convert(None)
 
         if len(df):
             dfs[symbol.lower()] = df
@@ -128,11 +128,8 @@ def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
         df = resample_stocks_to_month(df)
         df[symbol] = df["score"]
 
-        helper = df[[symbol]]
-        helper.index = helper.index.date
-
         tracker = pd.merge(
-            tracker, helper, left_index=True, right_index=True, how="left"
+            tracker, df[[symbol]], left_index=True, right_index=True, how="left"
         )
     return tracker
 

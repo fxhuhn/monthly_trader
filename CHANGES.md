@@ -1,19 +1,21 @@
 # Planned transactions for next month
 
 ## New
-+ adsk
-+ rost
 + adbe
++ adsk
 + lin
++ rost
++ hon
++ payx
 ## Unchanged
 * pdd
 ## Leave
-- nflx
-- fang
-- goog
-- smci
 - asml
-- meta
+- smci
 - crwd
+- fang
+- meta
+- nflx
 - cost
+- goog
 - amd

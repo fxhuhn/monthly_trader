@@ -121,7 +121,7 @@ def ndx100_list():
 def prepare_stocks(index: pd.DataFrame) -> pd.DataFrame:
     tracker = index.copy()
     # stocks = get_stocks(ndx100_list())
-    stocks = get_stocks(get_nasdaq_symbols())
+    stocks = get_stocks(get_nasdaq_symbols() + ["^ndx"])
 
     for symbol, df in stocks.items():
         df["score"] = get_score(df)
@@ -151,9 +151,22 @@ def get_top_stocks(stocks: dict) -> dict:
     stocks.pop("Close")
     stocks.pop("sma")
 
-    stocks.pop("googl")
+    try:
+        ndx_min = stocks.pop("^ndx")
+    except KeyError:
+        print(f"ndx missing at {year}-{month:0>2}")
+        ndx_min = 0
 
-    stocks = {k: v for k, v in stocks.items() if v > 0 and k in nasdaq_symbols}
+    try:
+        stocks.pop("googl")
+    except KeyError:
+        pass
+
+    stocks = {
+        k: v
+        for k, v in stocks.items()
+        if (v > 0 and v > ndx_min) and k in nasdaq_symbols
+    }
 
     return sorted(stocks.items(), key=operator.itemgetter(1))[-MAX_STOCKS:]
 

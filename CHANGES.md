@@ -6,12 +6,12 @@
 
 ## Leave
 - cost
-- fang
-- meta
-- crwd
-- pdd
-- goog
-- asml
 - amd
-- nflx
+- fang
+- pdd
+- crwd
 - smci
+- meta
+- goog
+- nflx
+- asml

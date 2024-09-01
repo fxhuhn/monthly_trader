@@ -5,13 +5,13 @@
 ## Unchanged
 
 ## Leave
-- cost
-- amd
+- nflx
+- meta
 - fang
+- amd
+- goog
+- asml
+- smci
 - pdd
 - crwd
-- smci
-- meta
-- goog
-- nflx
-- asml
+- cost

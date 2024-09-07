@@ -1,5 +1,5 @@
 # NASDAQ 100 Trader
-Stock Trading and Screening only end of month. With an average monthly return of 2.26%. Every month!
+Stock Trading and Screening only end of month. With an average monthly return of 2.10%. Every month!
 
 ## Average Monthly Return
 |   month |   profit |
@@ -12,7 +12,7 @@ Stock Trading and Screening only end of month. With an average monthly return of
 |      06 |     7.10 |
 |      07 |     4.80 |
 |      08 |     1.57 |
-|      09 |    -4.13 |
+|      09 |    -4.25 |
 |      10 |     3.30 |
 |      11 |    13.00 |
 |      12 |     5.60 |
@@ -440,4 +440,14 @@ Stock Trading and Screening only end of month. With an average monthly return of
 | 2024-08 | pdd      | 2024-08-01 | 2024-08-30 |  127.86 |   96.11 |   -24.80 |
 | 2024-08 | crwd     | 2024-08-01 | 2024-08-30 |  232.00 |  277.28 |    19.50 |
 | 2024-08 | smci     | 2024-08-01 | 2024-08-30 |  704.56 |  437.70 |   -37.90 |
+| 2024-09 | fast     | 2024-09-03 | 2024-09-06 |   68.06 |   65.89 |    -3.20 |
+| 2024-09 | adsk     | 2024-09-03 | 2024-09-06 |  261.77 |  250.37 |    -4.40 |
+| 2024-09 | lin      | 2024-09-03 | 2024-09-06 |  473.94 |  456.85 |    -3.60 |
+| 2024-09 | gehc     | 2024-09-03 | 2024-09-06 |   84.56 |   85.09 |     0.60 |
+| 2024-09 | ea       | 2024-09-03 | 2024-09-06 |  151.70 |  144.01 |    -5.10 |
+| 2024-09 | rost     | 2024-09-03 | 2024-09-06 |  150.06 |  150.53 |     0.30 |
+| 2024-09 | zs       | 2024-09-03 | 2024-09-06 |  199.99 |  156.78 |   -21.60 |
+| 2024-09 | dash     | 2024-09-03 | 2024-09-06 |  128.04 |  123.56 |    -3.50 |
+| 2024-09 | pdd      | 2024-09-03 | 2024-09-06 |   94.99 |   93.30 |    -1.80 |
+| 2024-09 | meta     | 2024-09-03 | 2024-09-06 |  519.64 |  500.27 |    -3.70 |
 

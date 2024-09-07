@@ -5,13 +5,13 @@
 ## Unchanged
 
 ## Leave
-- nflx
-- meta
-- fang
-- amd
-- goog
-- asml
-- smci
 - pdd
-- crwd
-- cost
+- rost
+- fast
+- dash
+- ea
+- meta
+- adsk
+- lin
+- zs
+- gehc

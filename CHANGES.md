@@ -5,13 +5,13 @@
 ## Unchanged
 
 ## Leave
-- meta
-- rost
+- fast
+- zs
+- dash
+- ea
 - adsk
 - pdd
-- dash
-- zs
-- lin
-- ea
+- rost
 - gehc
-- fast
+- meta
+- lin

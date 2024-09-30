@@ -6,12 +6,12 @@
 
 ## Leave
 - adsk
-- rost
-- gehc
-- pdd
 - zs
-- meta
-- ea
 - dash
-- lin
 - fast
+- gehc
+- lin
+- rost
+- meta
+- pdd
+- ea

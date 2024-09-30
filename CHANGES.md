@@ -7,11 +7,11 @@
 ## Leave
 - zs
 - gehc
+- lin
+- meta
+- dash
 - fast
+- ea
 - pdd
 - rost
-- meta
-- lin
-- ea
-- dash
 - adsk

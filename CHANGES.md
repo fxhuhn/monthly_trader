@@ -2,18 +2,18 @@
 
 ## New
 + meli
++ avgo
 + klac
 + crwd
-+ avgo
 ## Unchanged
-* dash
-* meta
 * isrg
+* meta
 * nflx
+* dash
 * arm
 * nvda
 ## Leave
+- ceg
 - ctas
 - amd
-- ceg
 - panw

@@ -1,6 +1,6 @@
 numpy
 pandas
 tabulate
-yfinance
+yfinance==0.2.44
 pandas_ta
 git+https://github.com/jmccarrell/n100tickers@main

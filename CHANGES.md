@@ -2,17 +2,16 @@
 
 ## New
 + ceg
-+ ttd
 + mu
 ## Unchanged
-* avgo
-* meta
-* nvda
-* arm
-* dash
-* meli
 * crwd
+* avgo
+* dash
+* arm
+* isrg
+* meli
+* nvda
+* meta
 ## Leave
 - nflx
 - amd
-- isrg

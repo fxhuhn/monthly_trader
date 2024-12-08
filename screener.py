@@ -144,7 +144,15 @@ def get_top_stocks(stocks: dict) -> dict:
     else:
         month = month + 1
 
-    nasdaq_symbols = get_nasdaq_symbols_monthly(year, month)
+    try:
+        nasdaq_symbols = get_nasdaq_symbols_monthly(year, month)
+    except Exception:
+        print("No known tickers")
+        year = 2000 + int(stocks["month"][:2])
+        month = int(stocks["month"][-2:])
+        print(f"fallback to {year}-{month}")
+        nasdaq_symbols = get_nasdaq_symbols_monthly(year, month)
+
     nasdaq_symbols = [symbol.lower() for symbol in nasdaq_symbols]
 
     stocks.pop("month")

@@ -1,21 +1,21 @@
 # Planned transactions for next month
 
 ## New
++ pypl
++ cost
++ tmus
 + mrvl
-+ ilmn
 + bkng
 + isrg
-+ tmus
-+ cost
 ## Unchanged
 * avgo
+* nvda
 * meta
 * arm
-* nvda
 ## Leave
-- dash
-- meli
-- nflx
-- ttd
-- ceg
 - crwd
+- nflx
+- dash
+- ttd
+- meli
+- ceg

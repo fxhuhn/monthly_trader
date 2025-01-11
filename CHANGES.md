@@ -5,13 +5,13 @@
 ## Unchanged
 
 ## Leave
+- isrg
+- meta
+- avgo
+- mrvl
+- arm
+- tmus
+- pypl
 - nvda
 - bkng
-- meta
-- tmus
-- mrvl
 - cost
-- arm
-- pypl
-- avgo
-- isrg

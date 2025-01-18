@@ -6,12 +6,12 @@
 
 ## Leave
 - isrg
+- mrvl
+- cost
+- tmus
 - meta
 - avgo
-- mrvl
 - arm
-- tmus
-- pypl
 - nvda
 - bkng
-- cost
+- pypl

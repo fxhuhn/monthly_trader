@@ -5,13 +5,13 @@
 ## Unchanged
 
 ## Leave
-- avgo
-- pypl
-- bkng
-- mrvl
-- nvda
-- cost
-- isrg
+- adsk
+- panw
+- adp
+- ttd
+- mar
 - tmus
-- meta
+- ddog
+- cost
+- ceg
 - arm

@@ -6,12 +6,12 @@
 
 ## Leave
 - adsk
-- panw
-- adp
-- ttd
-- mar
-- tmus
 - ddog
+- mar
+- ttd
+- arm
+- panw
+- tmus
 - cost
 - ceg
-- arm
+- adp
